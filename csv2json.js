@@ -15,8 +15,9 @@ var option  = { "ext" : "csv" };
     });
  
     require("fs").createReadStream(fl.read(files, option , function (results){
-    for(var i = 0; i < results.length; i++){
-      console.log(results[i].path);
-    }});).pipe(converter);
+	    for(var i = 0; i < results.length; i++){
+    	  console.log(results[i].path);
+    	}
+	})).pipe(converter);
  
 
