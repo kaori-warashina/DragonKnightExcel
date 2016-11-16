@@ -7,5 +7,5 @@ var converter = new Converter({});
         console.log("JSON形式で出力されました");
     });
  
-    require("fs").createReadStream("chaaracter.csv").pipe(converter);
-    require("fs").createReadStream("chaaracter0001.csv").pipe(converter);
+    require("fs").createReadStream("character.csv").pipe(converter);
+    require("fs").createReadStream("character0001.csv").pipe(converter);
