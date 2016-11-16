@@ -18,6 +18,6 @@ var option  = { "ext" : "csv" };
 	    for(var i = 0; i < results.length; i++){
     	  console.log(results[i].path);
     	}
-	})).pipe(converter);
+	});).pipe(converter);
  
 
