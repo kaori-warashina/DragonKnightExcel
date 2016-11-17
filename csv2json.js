@@ -17,7 +17,7 @@ fl.read(files, option , function (results){
 	var Converter = require("csvtojson").Converter;
 	var converter = new Converter({});
 	    converter.on("end_parsed", function (jsonArray) {
-	        fs.writeFile("./" + csvFile + ".json", JSON.stringify(jsonArray, null, '    '));
+	        fs.writeFile('./' + csvFile + '.json' , JSON.stringify(jsonArray, null, '    '));
 	        console.log("JSON形式で出力されました");
 	    });
 
