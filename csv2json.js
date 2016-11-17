@@ -17,7 +17,7 @@ fl.read(files, option , function (results){
 		        fs.writeFile('./master.json', JSON.stringify(jsonArray, null, '    '));
 		        console.log("JSON形式で出力されました");
 		    });
-		    
+
 	//results csv to createReadStream
-	require("fs").createReadStream(results[i].path).pipe(converter);
+	require("fs").createReadStream("character.csv").pipe(converter);
 			
