@@ -19,4 +19,4 @@ converter.on("end_parsed", function (jsonArray) {
 });
 
 //read from file 
-require("fs").createReadStream( ext:".csv" ).pipe(converter);
+require("fs").createReadStream( "character.csv" ).pipe(converter);
