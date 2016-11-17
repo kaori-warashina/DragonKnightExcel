@@ -1,12 +1,11 @@
 var fl      = require('node-filelist');
 var files   = [ "/excel" ];     //読み込みたいファイルディレクトリまたはパス(配列なので複数指定可)
 var option  = { "ext" : "csv" };   //読み込みたいファイルの拡張子(指定がない場合は全てのファイルを読み込みます)
-var csvFile = 
 
 // get file path 
 fl.read(files, option , function (results){
     for(var i = 0; i < results.length; i++){
-    	csvFile = results[i].path;
+    	var csvFile = results[i].path;
 
 
 	// csv to json
