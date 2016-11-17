@@ -8,24 +8,24 @@ fl.read(files, option , function (results){
     	var csvFile = results[i].path;
 
 
-	// csv to json
+	// // csv to json
 
-	// file system  require
-	var fs = require('fs');
-	// converter require
-	var Converter = require("csvtojson").Converter;
-	var converter = new Converter({});
-	    converter.on("end_parsed", function (jsonArray) {
-	        fs.writeFile('./' + csvFile + '.json' , JSON.stringify(jsonArray, null, '    '));
-	        console.log( csvFile + "JSON形式で出力されました");
-	    });
+	// // file system  require
+	// var fs = require('fs');
+	// // converter require
+	// var Converter = require("csvtojson").Converter;
+	// var converter = new Converter({});
+	//     converter.on("end_parsed", function (jsonArray) {
+	//         fs.writeFile('./' + csvFile + '.json' , JSON.stringify(jsonArray, null, '    '));
+	//         console.log( csvFile + "JSON形式で出力されました");
+	//     });
 
-	// results csv to createReadStream
-	require("fs").createReadStream(csvFile).pipe(converter);
+	// // results csv to createReadStream
+	// require("fs").createReadStream(csvFile).pipe(converter);
 			
 
 
-      console.log(results[i].path);
+      console.log(csvFile);
     }
 });
 
