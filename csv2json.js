@@ -1,5 +1,4 @@
 var path = ".";
-path.extname(filename) === .'csv'
 var fs = require("fs");
 
 // 同期的にディレクトリ内にあるファイル名の一覧を配列で取得
@@ -11,18 +10,15 @@ files.forEach(function(file){
 
 // get file path 
 
+//Converter Class 
+var Converter = require("csvtojson").Converter;
+var converter = new Converter({});
+ 
+//end_parsed will be emitted once parsing finished 
+converter.on("end_parsed", function (jsonArray) {
+	fs.writeFile( "master.json" , JSON.stringify(jsonArray, null, '    '));
+	console.log(jsonArray); //here is your result jsonarray 
+});
 
-	// csv to json
-
-	// converter require
-	var Converter = require("csvtojson").Converter;
-	var converter = new Converter({});
-	    converter.on("end_parsed", function (jsonArray) {
-	        fs.writeFile( "master.json" , JSON.stringify(jsonArray, null, '    '));
-	        console.log( "JSON形式で出力されました");
-	        console.log( fs );
-	    });
-
-	// results csv to createReadStream
-	require("fs").createReadStream("character0001.csv").pipe(converter);
-	require("fs").createReadStream("character.csv").pipe(converter);
+//read from file 
+require("fs").createReadStream( ext:".csv" ).pipe(converter);
