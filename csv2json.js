@@ -1,8 +1,6 @@
 var fs = require('fs');
 var Converter = require("csvtojson").Converter;
 var converter = new Converter({});
-var path = require('path');
-
 
     converter.on("end_parsed", function (jsonArray) {
         fs.writeFile('./master.json', JSON.stringify(jsonArray, null, '    '));
