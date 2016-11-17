@@ -28,4 +28,4 @@ fl.read(files, option , function (results){
       console.log(csvFile);
     }
 });
-
+console.log(csvFile);
