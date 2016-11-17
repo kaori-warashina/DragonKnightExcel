@@ -1,16 +1,14 @@
-var path = ".";
-var fs = require("fs");
+var fl      = require('node-filelist');
+var files   = [ "/excel" ];     //読み込みたいファイルディレクトリまたはパス(配列なので複数指定可)
+var option  = { "ext" : "csv" };   //読み込みたいファイルの拡張子(指定がない場合は全てのファイルを読み込みます)
 
-// 同期的にディレクトリ内にあるファイル名の一覧を配列で取得
-// "." と ".." は含まれない
-var files = fs.readdirSync(path);
-files.forEach(function(file){
-  console.log(file);
+fl.read(files, option , function (results){
+    for(var i = 0; i < results.length; i++){
+      console.log(results[i].path);
+    }
 });
 
-// get file path 
-
-//Converter Class 
+var fs = require('fs');
 var Converter = require("csvtojson").Converter;
 var converter = new Converter({});
  
