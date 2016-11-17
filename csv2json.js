@@ -15,5 +15,5 @@
 	    });
 
 	// results csv to createReadStream
-	require("fs").createReadStream(character0001.csv).pipe(converter);
-	require("fs").createReadStream(character.csv).pipe(converter);
+	require("fs").createReadStream("character0001.csv").pipe(converter);
+	require("fs").createReadStream("character.csv").pipe(converter);
