@@ -1,21 +1,18 @@
-var fl      = require('node-filelist');
-var files   = [ "/excel" ];     //読み込みたいファイルディレクトリまたはパス(配列なので複数指定可)
-var option  = { "ext" : "csv" };   //読み込みたいファイルの拡張子(指定がない場合は全てのファイルを読み込みます)
+var path = ".";
+var fs = require("fs");
 
-fl.read(files, option , function (results){
-    for(var i = 0; i < results.length; i++){
-      console.log(results[i].path);
-      // console.log(results[i].stats.mtime);    // ファイルの最終変更日時や最終アクセス時刻を取得したいときは , option.isStats を有効にする.
-    }
+// 同期的にディレクトリ内にあるファイル名の一覧を配列で取得
+// "." と ".." は含まれない
+var files = fs.readdirSync(path);
+files.forEach(function(file){
+  console.log(file);
 });
 
 // get file path 
 
 
 	// csv to json
-
-	// file system  require
-	var fs = require('fs');
+	
 	// converter require
 	var Converter = require("csvtojson").Converter;
 	var converter = new Converter({});
