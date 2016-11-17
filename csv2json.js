@@ -18,7 +18,7 @@ fl.read(files, option , function (results){
 	var converter = new Converter({});
 	    converter.on("end_parsed", function (jsonArray) {
 	        fs.writeFile('./' + csvFile + '.json' , JSON.stringify(jsonArray, null, '    '));
-	        console.log("JSON形式で出力されました");
+	        console.log( csvFile + "JSON形式で出力されました");
 	    });
 
 	// results csv to createReadStream
