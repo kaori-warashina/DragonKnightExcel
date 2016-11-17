@@ -5,7 +5,10 @@ var option  = { "ext" : "csv" };   //読み込みたいファイルの拡張子(
 //read csv file
 fl.read(files, option , function (results){
     for(var i = 0; i < results.length; i++){
-
+	//csv file log	
+	console.log(results[i].path);
+    }
+});
     	//csv to json
 		var fs = require('fs');
 		var Converter = require("csvtojson").Converter;
@@ -18,7 +21,3 @@ fl.read(files, option , function (results){
 	//results csv to createReadStream
 	require("fs").createReadStream(results[i].path).pipe(converter);
 			
-	//csv file log	
-	console.log(results[i].path);
-    }
-});
