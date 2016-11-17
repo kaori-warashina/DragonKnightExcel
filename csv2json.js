@@ -1,4 +1,5 @@
 var path = ".";
+path.extname(filename) === .'csv'
 var fs = require("fs");
 
 // 同期的にディレクトリ内にあるファイル名の一覧を配列で取得
@@ -12,7 +13,7 @@ files.forEach(function(file){
 
 
 	// csv to json
-	
+
 	// converter require
 	var Converter = require("csvtojson").Converter;
 	var converter = new Converter({});
