@@ -1,22 +1,18 @@
-var fl      = require('node-filelist');
-var files   = [ "/excel" ];     //読み込みたいファイルディレクトリまたはパス(配列なので複数指定可)
-var option  = { "ext" : "csv" };   //読み込みたいファイルの拡張子(指定がない場合は全てのファイルを読み込みます)
-
-fl.read(files, option , function (results){
-    for(var i = 0; i < results.length; i++){
-      console.log(results[i].path);
-    }
+var fs = require('fs');
+fs.readdir('.', function(err, files){
+    if (err) throw err;
+    files.filter(function(file){
+        //CSVのみを取得
+        return fs.statSync(file).isFile() && /.*\.csv$/.test(file); //絞り込み
+    }).forEach(function (file) {
+        //JSONに吐き出し
+        var fs = require('fs');
+        var Converter = require("csvtojson").Converter;
+        var converter = new Converter({});
+        converter.on("end_parsed", function (jsonArray) {
+            fs.writeFile(file +'.json', JSON.stringify(jsonArray, null, '    '));
+            console.log(file + "JSON形式で出力されました");
+        });
+    require("fs").createReadStream( file ).pipe(converter);
+    });
 });
-
-// var fs = require('fs');
-// var Converter = require("csvtojson").Converter;
-// var converter = new Converter({});
- 
-// //end_parsed will be emitted once parsing finished 
-// converter.on("end_parsed", function (jsonArray) {
-// 	fs.writeFile( "master.json" , JSON.stringify(jsonArray, null, '    '));
-// 	console.log(jsonArray); //here is your result jsonarray 
-// });
-
-// //read from file 
-// require("fs").createReadStream( "character.csv" ).pipe(converter);
