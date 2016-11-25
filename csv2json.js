@@ -10,7 +10,7 @@ fs.readdir('.', function(err, files){
         var Converter = require("csvtojson").Converter;
         var converter = new Converter({});
         converter.on("end_parsed", function (jsonArray) {
-            fs.writeFile('DragonKnightJSON/'+file +'.json', JSON.stringify(jsonArray, null, '    '));
+            fs.writeFile('json/'+file +'.json', JSON.stringify(jsonArray, null, '    '));
             console.log(file + "JSON形式で出力されました");
         });
     require("fs").createReadStream( file ).pipe(converter);
