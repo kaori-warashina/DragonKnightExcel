@@ -1,0 +1,7 @@
+﻿No,character_id,character_release_id,character_base_id,nickname,character_name,rarity,base_type,character_type,attribute,exp_type,character_text,parameter_table,awakening,attack,skill,skill_max_level,material_exp,material_gold,material_skill
+1,chara_10010_10_0,chara_10010_10,chara_10010,,アーシス,50,1,1,5,exp_group_01,旅する戦士。,para_00001,0,skill_000200,skill_000201,20,0,0,0
+2,chara_10010_10_1,chara_10010_10,chara_10010,戦士,アーシス,51,1,1,5,exp_group_01,旅する戦士。,para_00001,1,skill_000200,skill_000201,25,0,0,0
+3,chara_10010_10_2,chara_10010_10,chara_10010,戦士,アーシス,51,1,1,5,exp_group_01,旅する戦士。,para_00001,2,skill_000200,skill_000201,30,0,0,0
+4,chara_10010_12_0,chara_10010_12,chara_10010,,アーシス,50,1,1,5,exp_group_01,旅する戦士。,para_00001,0,skill_000200,skill_000201,20,0,0,0
+5,chara_10011_10_0,chara_10011_10,chara_10011,,シフォン,20,1,4,1,exp_group_02,優しい獣人。,para_00002,0,skill_000100,skill_000101,20,0,0,0
+6,chara_10011_10_1,chara_10011_10,chara_10011,槍使い,シフォン,21,1,4,1,exp_group_02,優しい獣人。,para_00002,1,skill_000100,skill_000101,25,0,0,0
